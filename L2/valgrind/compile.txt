@@ -1,0 +1,8 @@
+
+
+
+gcc -mtune=opteron -g -march=x86-64 v10.c
+gcc -mtune=opteron -g -c -fverbose-asm -Wa,-adhln -march=x86-64 v10.c
+
+valgrind --tool=memcheck --leak-check=yes ./v00
+

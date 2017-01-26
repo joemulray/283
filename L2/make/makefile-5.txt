@@ -1,0 +1,15 @@
+PROG=	test
+OBJS=	one.o main.o two.o three.o
+#CFLAGS=	-Wall -g
+
+all: ${PROG}
+
+${PROG}: ${OBJS}
+	@echo $@ depends on $?
+	${CC} ${LDFLAGS} ${OBJS} -o ${PROG}
+
+%.o: %.c ext.h one.h
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+clean:
+	rm -f ${PROG} ${OBJS}

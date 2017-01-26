@@ -1,0 +1,23 @@
+# Run 'make', then 'touch one.h' and 'make' again.
+
+CC=cc
+
+all: one
+
+one: one.o main.o two.o three.o
+	${CC} one.o main.o two.o three.o -o one
+
+one.o: ext.h one.h one.c
+	${CC} -c one.c
+
+main.o: ext.h one.h main.c
+	${CC} -c main.c
+
+two.o: one.h two.c
+	${CC} -c two.c
+
+three.o: one.h three.c
+	${CC} -c three.c
+
+clean:
+	rm -f one *.o
