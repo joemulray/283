@@ -1,15 +1,29 @@
+#function arguments
+#program output name
 PROG=	test
+#required target files, as a function argument
 OBJS=	one.o main.o two.o three.o
+
+#flags, arguments as a function argument, Warning all and -g is for debugging
 CFLAGS=	-Wall -g
 
+#target all, calls function PROG will return test, and then call target test
 all: ${PROG}
 
+#target PROG, takes function OBJS, returns the four .o files, 
 ${PROG}: ${OBJS}
+	#$@ is the name of the target file, $? the names of all the
+	# prerequisites that are newer than the target
 	@echo $@ depends on $?
+	
+	#missing CC assignment, Makefile implicitally assigns values for CC
 	${CC} ${LDFLAGS} ${OBJS} -o ${PROG}
 
+#target .c.o, compiles the runs the flag functional argument, uses target file name
+# and outputs in the name of the first prerequise
 .c.o:
 	$(CC) -c $(CFLAGS) -o $@ $<
 	
+#removes the program executable file "test" , and all main.o files
 clean:
 	rm -f ${PROG} ${OBJS}

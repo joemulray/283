@@ -2,22 +2,32 @@
 
 CC=cc
 
+#target all: when run will call all target below
 all: one
 
+#one target calls three other target variables
+# and compiles them into an executable output one
 one: one.o main.o two.o three.o
 	${CC} one.o main.o two.o three.o -o one
 
+#target one.o, takes in three files, compiles and creates one.o file
 one.o: ext.h one.h one.c
 	${CC} -c one.c
 
+#target main.o, compiles three files and creates main.o file
 main.o: ext.h one.h main.c
 	${CC} -c main.c
 
+#target two.o, takes two c files, compiles them and creates two.o file
 two.o: one.h two.c
 	${CC} -c two.c
 
+#target three.o, takes two input files, compiles creates three.o file
 three.o: one.h three.c
 	${CC} -c three.c
 
+#clean target, removes all .o files, "clean up" the directory by removing executable files
 clean:
 	rm -f one *.o
+
+

@@ -1,0 +1,131 @@
+Joseph Mulray
+CS 283
+Lab 2: gdb
+
+etox:
+	(gdb) break main
+	Breakpoint 1 at 0x40064e: file etox.c, line 7.
+	(gdb) run 
+	Starting program: /home/jam699/283/gdb/etox 
+
+	Breakpoint 1, main () at etox.c:7
+	7	 {
+	(gdb) n
+	12	  printf("This program calculates e^x\n");
+	(gdb) n
+	This program calculates e^x
+	13	  printf("using sum of (x^k)/k!\n");
+	(gdb) n
+	using sum of (x^k)/k!
+	14	  printf("Enter x, n : ");
+	(gdb) n
+	16	  scanf("%lf%d",&x,&n);
+	(gdb) display x 
+	1: x = 2.0729334438928678e-317
+	(gdb) display n
+	2: n = 0
+	(gdb) n
+	Enter x, n : 1 20
+	17	  printf("x,n = %8.4lf %4d\n",x,n);
+	1: x = 1
+	2: n = 20
+	(gdb) n
+	x,n =   1.0000   20
+	18	  series = getvalue(x,n);
+	1: x = 1
+	2: n = 20
+	(gdb) n
+	19	  printf("e^x = %14.10lf\n",series);
+	1: x = 1
+	2: n = 20
+	(gdb) n
+	e^x =   2.7182818346
+	21	  return(0);
+	1: x = 1
+	2: n = 20
+	(gdb) n
+	22	 }
+	1: x = 1
+	2: n = 20
+	(gdb) n
+
+	__libc_start_main (main=0x400646 <main>, argc=1, argv=0x7fffffffeac8, 
+	    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+	    stack_end=0x7fffffffeab8) at ../csu/libc-start.c:325
+	325	../csu/libc-start.c: No such file or directory.
+
+
+
+
+
+
+g1:
+
+	(gdb) break main
+	Breakpoint 1 at 0x40061e: file g1.c, line 7.
+	(gdb) run    
+	Starting program: /home/jam699/283/gdb/g1 
+
+	Breakpoint 1, main () at g1.c:7
+	7	  c = fgetc (stdin) ;
+	(gdb) display c
+	1: c = 0 '\000'
+	(gdb) n
+	n
+	8	  while (c != EOF)
+	1: c = 110 'n'
+	(gdb) n
+	9	  if (isalnum (c) ) 
+	1: c = 110 'n'
+	(gdb) n
+	10	   printf ("%c\n", c) ;
+	1: c = 110 'n'
+	(gdb) n
+	n
+	8	  while (c != EOF)
+	1: c = 110 'n'
+	(gdb) n
+	9	  if (isalnum (c) ) 
+	1: c = 110 'n'
+	(gdb) n
+	10	   printf ("%c\n", c) ;
+	1: c = 110 'n'
+	(gdb) n
+	n
+	8	  while (c != EOF)
+	1: c = 110 'n'
+	(gdb) n
+	9	  if (isalnum (c) ) 
+	1: c = 110 'n'
+
+
+g2:
+
+	(gdb) break main
+	Breakpoint 1 at 0x4005fe: file g2.c, line 8.
+	(gdb) run
+	Starting program: /home/jam699/283/gdb/g2 
+
+	Breakpoint 1, main () at g2.c:8
+	8	  num = 1 << 31;
+	(gdb) display num
+	1: num = 32767
+	(gdb) display buf
+	2: buf = 0x0
+	(gdb) n
+	9	  buf = malloc(num) ;
+	1: num = -2147483648
+	2: buf = 0x0
+	(gdb) n
+	10	  fgets (buf, 1024, stdin) ;
+	1: num = -2147483648
+	2: buf = 0x0
+	(gdb) n
+	 
+
+	Program received signal SIGSEGV, Segmentation fault.
+	0x00007ffff7a7cd27 in __GI__IO_getline_info (
+	    fp=fp@entry=0x7ffff7dd18e0 <_IO_2_1_stdin_>, buf=buf@entry=0x0, n=1023, 
+	    delim=delim@entry=10, extract_delim=extract_delim@entry=1, eof=eof@entry=0x0)
+	    at iogetline.c:70
+	70	iogetline.c: No such file or directory.

@@ -7,10 +7,11 @@ int x;
    {
     printf("x is less than 10\n");
    }
+  return x;
  }
 
 int main()
  {
-  int y;
+  int y=1;
   foo(y);
  }

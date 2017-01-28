@@ -31,7 +31,7 @@ int n;
   double xpow = 1.0;
   for (k = 0; k <= n; k++)
    {
-    value += xpow / factorial(k);
+    value += (xpow / factorial(k));
     xpow = xpow * x;
    }
   return(value);
@@ -41,13 +41,12 @@ int factorial (number)
 int number;
  {
   int j;
-  int fact = 0;
+  int fact = 1;
 
-  for (j = 1; j <= number; j++)
-   {
+  for (j = 1; j <= number; ++j)
+   { 
     fact = fact * j;
    }
-
   return(fact);
  }
 

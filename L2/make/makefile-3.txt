@@ -1,13 +1,24 @@
+#functional arguments
+#program output file
 PROG=	test
+
+#OBJS holds the three prequisites needed for compile
 OBJS=	one.o main.o two.o three.o
 
+#Commented out functional argument
 #CFLAGS=	-Wall -g
 
 all: ${PROG}
 
+#target ${PROG} in this case will be test, uses function argument, which is the three make files
 ${PROG}: ${OBJS}
+	
+	#prints to stdout, depends on prequisites, in this case would be $(OBJS) variables
 	@echo $@ depends on $?
+	
+	#LDFLAGS contains flags passed to the compiler duing linking
 	${CC} ${LDFLAGS} ${OBJS} -o ${PROG}
 
+#clean removes all files with force with .o ending
 clean:
 	rm -f ls *.o
