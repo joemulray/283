@@ -1,0 +1,7 @@
+This is a text file
+to read line by line
+and homework one
+in programming in c
+try to read each file
+line by line
+ands re
