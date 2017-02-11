@@ -1,0 +1,8 @@
+Joseph Mulray
+Lab 3: File I/O Programming
+
+Included Makefile wasnt sure if you needed it or not
+
+Can run the make file:
+make DIR1=mydirectory DIR2=mydirectory2
+
