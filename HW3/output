@@ -1,0 +1,21 @@
+Joseph Mulray
+HW3: OUTPUT:
+
+
+B:
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding: gzip, deflate, sdch, br
+Accept-Language: en-US,en;q=0.8
+
+===================================================
+
+C:
+HTTP/1.0 200 OK Server: Tiny Web Server Content-length: 99 Content-type: text/html
+
+Version of HTTP is 1.0 for my browser. Echoed this to the client will populate onto html page.
+
+
