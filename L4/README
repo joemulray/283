@@ -1,0 +1,6 @@
+Joseph Mulray
+Lab 4: HTTP Client-Server
+
+make HOST=localhost PORT=7757 FILE=home.html
+
+Had trouble getting the host name to connect using open_client, had to use open_listenfd for the port number, and then the rest should work fine sends the html file passed in as an argument included a Makefile, and can run from the command above.
