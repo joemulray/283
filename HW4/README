@@ -1,0 +1,8 @@
+Joseph Mulray
+CS283
+HW4: File I/O
+2/24/17
+
+make DIR=files ARG1=abc ARG2=def ARG3=fyz
+
+Program runs fine, did not know whether you wanted to set the directory or have it as an argument or just search for sub directory. I have a directory being passed as a command line argument and then searching the contents for a txt file. Other than should work fine. Included a makefile you can run the command above DIR is the directory then the rest are the arguments you are passing in.
