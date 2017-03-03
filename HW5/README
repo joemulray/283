@@ -1,0 +1,22 @@
+Joseph Mulray
+CS 283
+H5: Chapter 12 Concurrency
+
+
+hello.c 
+Included Makefile run command, 
+make prob1 ARG=[number]
+
+
+12.17
+
+a.) nothing prints because it calls exit() which kills everything including the thread and their processes.
+
+b.) You can fix this by using pthread_exit() or  pthread_join().
+
+
+
+Modified the contents of the other two .txt extentension files. I changed the extension to c files when I was working with them, to run and compile submitting the origin files instead of the .c extension so you can ignore the other targets within the makefile.
+
+make view
+look through all files.
