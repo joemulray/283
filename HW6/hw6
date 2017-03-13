@@ -1,0 +1,30 @@
+Joseph Mulray
+CS283 : HW6
+Chapter 8 Processes
+March 10 2017
+
+
+Problem 8.11:
+It will print hello 2 times then exit the fork and for loop.
+
+Problem 8.12:
+Print hello 4 times.
+
+Problem 8.13:
+There are outputs for the program can be one of the following:
+x=2 
+x=3 
+x=4 
+
+
+Problem 8.14:
+Will print out hello 3 times.
+
+Problem 8.16:
+Will output the following:
+counter = 2
+
+
+Problem 8.23:
+The handler signal is blocked when the signals from the child are coming resulting in the signals never being acknowledged.
+
