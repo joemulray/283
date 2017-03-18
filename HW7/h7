@@ -1,0 +1,32 @@
+Joseph Mulray
+CS 283
+Chapter 7 Linkers
+
+
+Problem 7.6
+Symbol | swap.o .symtab entry? | Symbol type | Module where defined | Section
+-----------------------------------------------------------------------------
+buf |	 Y 	|	extern	|	main.o	|	.data
+bufp0 | Y 	|	global	|	swap.o	|	.data
+bufp1 | Y 	|	global	|	swap.o 	|	.bss
+swap | Y 	|	local	|	swap.o	|	.text
+temp | N 	|	None	|	None	|	None
+incr | Y 	|	global	|	swap.o	|	.text
+count | Y	|	local	|	swap.o	|	.data
+
+
+
+Problem 7.7
+Change variable from double to static double to print the correct values for x and y.
+
+static double x;
+
+void f()
+{
+        x = -0.0
+}
+
+
+Problem 7.9
+The compiler in this case is choosing the stronger symbol between the two object modules, in this case it will choose the foo.c module because the declaration of p2 in module main is weaker.
+
